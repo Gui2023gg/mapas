@@ -29,11 +29,17 @@ Interface Responsiva: Design moderno e intuitivo
 text
 GeolocationApp/
 ├── app/
+
 │   └── index.tsx                 # Tela principal da aplicação
+
 ├── config/
+
 │   └── supabase.ts              # Configuração do cliente Supabase
+
 ├── assets/                      # Recursos estáticos (ícones, imagens)
+
 └── package.json                 # Dependências do projeto
+
 📦 Tecnologias Utilizadas
 Frontend
 React Native - Framework mobile
