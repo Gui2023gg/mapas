@@ -1,11 +1,14 @@
 🗺️ App de Geolocalização - React Native com Expo
 Uma aplicação móvel completa desenvolvida em React Native com TypeScript que demonstra o uso de geolocalização, geocodificação e integração com APIs de mapas.
 
+
 📱 Sobre o Projeto
 Este aplicativo oferece funcionalidades avançadas de localização, permitindo aos usuários obter sua posição atual, converter coordenadas em endereços legíveis, salvar localizações e visualizar pontos de interesse em mapas.
 
+
 🚀 Funcionalidades
-🌟 Principais
+
+
 📍 Geolocalização em Tempo Real: Obtenha coordenadas precisas via GPS
 
 🔄 Geocodificação Reversa: Converta coordenadas em endereços legíveis
@@ -16,6 +19,7 @@ Este aplicativo oferece funcionalidades avançadas de localização, permitindo 
 
 📊 Dashboard Interativo: Visualize estatísticas e histórico de localizações
 
+
 🛠️ Técnicas
 Permissões de Localização: Gerenciamento nativo para Android e iOS
 
@@ -24,6 +28,7 @@ API REST: Integração com OpenStreetMap Nominatim para geocodificação
 Banco de Dados: Armazenamento seguro com Supabase
 
 Interface Responsiva: Design moderno e intuitivo
+
 
 🏗️ Arquitetura do Projeto
 text
@@ -40,8 +45,10 @@ GeolocationApp/
 
 └── package.json                 # Dependências do projeto
 
+
 📦 Tecnologias Utilizadas
 Frontend
+
 React Native - Framework mobile
 
 TypeScript - Tipagem estática
@@ -62,8 +69,11 @@ Axios - Cliente HTTP
 
 React Navigation - Navegação entre telas
 
+
 🛠️ Configuração e Instalação
+
 Pré-requisitos
+
 Node.js 16+
 
 Expo CLI
@@ -75,38 +85,65 @@ Clone o repositório
 
 bash
 git clone <repository-url>
+
 cd GeolocationApp
+
 Instale as dependências
 
 bash
+
 npm install
+
 Configure o Supabase
 
 bash
+
 # Crie um arquivo config/supabase.ts
+
 export const supabase = createClient(
+
   'SUA_URL_SUPABASE',
+  
   'SUA_CHAVE_PUBLICA'
+  
 );
+
 Execute a aplicação
 
 bash
+
 npx expo start
+
+
 ⚙️ Configuração do Supabase
+
+
 1. Crie uma tabela locations:
+   
 sql
+
 CREATE TABLE locations (
+
   id UUID DEFAULT gen_random_uuid() PRIMARY KEY,
+  
   latitude DOUBLE PRECISION NOT NULL,
+  
   longitude DOUBLE PRECISION NOT NULL,
+  
   address TEXT,
+  
   created_at TIMESTAMP WITH TIME ZONE DEFAULT TIMEZONE('utc'::text, NOW())
+  
 );
 
+
 -- Habilitar RLS
+
 ALTER TABLE locations ENABLE ROW LEVEL SECURITY;
 
+
 -- Política para permitir todas as operações
+
 CREATE POLICY "Allow all operations" ON locations FOR ALL USING (true);
 2. Configure as variáveis de ambiente:
 typescript
